@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var firstName: String = ""
+    @State var lastName: String = ""
+    @State var greeting: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        VStack{
+            Spacer()
+            HStack {
+                Text("First Name: ")
+                Spacer()
+                Spacer()
+                TextField("Enter first name", text: $firstName)
+            }
+            HStack{
+                Text("Last Name: ")
+                Spacer()
+                Spacer()
+                TextField("Enter last name", text: $lastName)
+            }
+            Spacer()
+            Button("Greeting") {
+                self.greeting = "\(self.firstName) \(self.lastName) Welcome to CSE 335"
+            }
+            Spacer()
+            Text(greeting)
+            
+        }.padding()
     }
 }
 
