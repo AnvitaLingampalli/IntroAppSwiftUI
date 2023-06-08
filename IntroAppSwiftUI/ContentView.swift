@@ -29,7 +29,7 @@ struct ContentView: View {
             }
             Spacer()
             Button("Greeting") {
-                self.greeting = "\(self.firstName) \(self.lastName) Welcome to CSE 335"
+                self.greeting = "Welcome \(self.firstName) \(self.lastName)!"
             }
             Spacer()
             Text(greeting)
